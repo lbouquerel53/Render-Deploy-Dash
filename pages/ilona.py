@@ -2,7 +2,7 @@ from dash import Dash, html, dcc, register_page, callback, Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
 
-register_page(__name__, name='Page 2')
+register_page(__name__, name='Ilona')
 
 
 #-----------------------------------------------------------------------#
@@ -36,19 +36,19 @@ opt_log = [{'label': 'Activée', 'value': True}, {'label': 'Désactivée', 'valu
 
 tab1_content = dbc.Card([
     dbc.CardBody(className="mt-3", children=[    
-        dcc.Checklist(id='checklist', options=opt_continent, value=opt_continent, inline=True)
+        dcc.Checklist(id='checklist1', options=opt_continent, value=opt_continent, inline=True)
     ])    
 ])
 
 tab2_content = dbc.Card([
     dbc.CardBody(className="mt-3", children=[   
-        dcc.RadioItems(id='radio', options=opt_log, value=True)
+        dcc.RadioItems(id='radio1', options=opt_log, value=True)
     ])    
 ])
 
 tab3_content = dbc.Card([
     dbc.CardBody(className="mt-3", children=[
-        dcc.Slider(id='slider', min=min_year , max=max_year , value=max_year, marks=slider_marks, step = None)
+        dcc.Slider(id='slider1', min=min_year , max=max_year , value=max_year, marks=slider_marks, step = None)
     ])
 ])
 
@@ -67,7 +67,7 @@ layout = html.Div([
     ]),
 
     # Affichage du graphique LifeExp by GDPperCap
-    dcc.Graph(id='graph-gdp', figure={}),
+    dcc.Graph(id='graph-gdp1', figure={}),
 
 ])
 
@@ -76,10 +76,10 @@ layout = html.Div([
 #-----------------------------------------------------------------------#
 
 @callback(
-    Output('graph-gdp', 'figure'),
-    Input('slider', "value"),
-    Input('checklist', "value"),
-    Input('radio', 'value')
+    Output('graph-gdp1', 'figure'),
+    Input('slider1', "value"),
+    Input('checklist1', "value"),
+    Input('radio1', 'value')
 )
 def update_graph(year_value, continent_value, log_boolean):
     df_update = df[(df.year == year_value) & df.continent.isin(continent_value)]
