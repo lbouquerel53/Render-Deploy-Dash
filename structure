@@ -1,0 +1,9 @@
+PROJECT STRUCTURE
+app.py
+assets/
+    - img/logo.png
+    - style.css
+pages/
+    - home.py
+    - page1.py
+    - page2.py
