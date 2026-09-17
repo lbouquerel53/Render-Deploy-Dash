@@ -6,5 +6,5 @@ assets/
 pages/
     - home.py
     - louis_bouquerel.py
-    - membre2.py
-    - membre3.py
+    - ilona.py
+    - bernice.py
