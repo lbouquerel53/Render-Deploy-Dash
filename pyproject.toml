@@ -8,11 +8,12 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "dash>=4.4.1",
-    "dash-bootstrap-components>=2.0.4",
+    "dash==4.4.1",
+    "dash-bootstrap-components==2.0.4",
+    "gunicorn>=26.2.0",
     "numpy>=2.5.3",
-    "pandas>=3.0.5",
-    "plotly>=7.1.0",
+    "pandas==3.0.5",
+    "plotly==7.0.0",
 ]
 
 [project.scripts]
